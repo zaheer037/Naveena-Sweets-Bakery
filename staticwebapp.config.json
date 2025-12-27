@@ -1,0 +1,86 @@
+{
+  "routes": [
+    {
+      "route": "/sweet",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/sav",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/ghee",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/cake",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/chocolate-cake",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/butter-cake",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/cheese-cake",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/cool-cake",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/sponge-cake",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/foam-cake",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/mini-cup-cakes",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/layered-cake",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/product/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/milk",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/namk",
+      "serve": "/index.html",
+      "statusCode": 200
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*.{png,jpg,gif,ico,svg}", "/css/*", "/js/*", "/assets/*"]
+  },
+  "mimeTypes": {
+    ".json": "application/json"
+  }
+}

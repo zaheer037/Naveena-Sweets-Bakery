@@ -1,0 +1,153 @@
+/* Image Optimization Styles */
+
+/* Skeleton Loading Animation */
+@keyframes pulse {
+  0% {
+    background-color: #f0f0f0;
+  }
+  50% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #f0f0f0;
+  }
+}
+
+.skeleton-loader {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Image Loading States */
+.image-loading {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-loaded {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Progressive Enhancement for WebP Support */
+.webp .fallback-image {
+  display: none;
+}
+
+.no-webp .webp-image {
+  display: none;
+}
+
+/* Responsive Image Container */
+.responsive-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.responsive-image-container::before {
+  content: '';
+  display: block;
+  padding-top: 66.67%; /* 3:2 Aspect Ratio - adjust as needed */
+}
+
+.responsive-image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hover Effects for Product Images */
+.product-image-hover {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.product-image-hover:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Lazy Loading Blur Effect Enhancement */
+.lazy-load-image-background.blur {
+  filter: blur(15px);
+  transition: filter 0.3s;
+}
+
+.lazy-load-image-background.blur.lazy-load-image-loaded {
+  filter: blur(0);
+}
+
+/* Image Error State */
+.image-error-fallback {
+  background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-size: 14px;
+  text-align: center;
+  flex-direction: column;
+}
+
+.image-error-fallback::before {
+  content: '🖼️';
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+/* Performance Optimization Classes */
+.critical-image {
+  /* For above-fold images - prioritize loading */
+  will-change: auto;
+}
+
+.non-critical-image {
+  /* For below-fold images - optimize for lazy loading */
+  content-visibility: auto;
+}
+
+/* Modern CSS Features for Better Performance */
+@supports (content-visibility: auto) {
+  .optimized-image-container {
+    content-visibility: auto;
+    contain-intrinsic-size: 300px 200px;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-loader,
+  .lazy-load-image-background,
+  .product-image-hover {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* High DPI Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .high-dpi-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Print Styles - Hide lazy loading placeholders */
+@media print {
+  .skeleton-loader,
+  .lazy-load-image-background.blur {
+    display: none;
+  }
+}

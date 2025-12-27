@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+/* Import your existing App.css styles */
+@import url('./App.css');
+
+/* Navbar Background Color Fix */
+.navbar-red {
+  background-color: #B22222 !important;
+  color: white !important;
+}
+
+/* Ensure Tailwind utilities work */
+@layer utilities {
+  .bg-naveena-red {
+    background-color: #B22222 !important;
+  }
+}
+
+/* Navigation Links Styling */
+.nav-link-bold {
+  font-family: 'Be Vietnam Pro', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  color: white !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease-in-out !important;
+}
+
+.nav-link-bold:hover {
+  color: #e5e7eb !important;
+  text-decoration: none !important;
+}
+
+/* Remove underlines from all navigation links */
+nav a {
+  text-decoration: none !important;
+}
+
+nav a:hover {
+  text-decoration: none !important;
+}
+
+/* Icon buttons styling */
+.icon-button {
+  min-width: 44px !important;
+  min-height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.icon-button:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  transform: scale(1.05) !important;
+}
+
+/* Responsive Navigation */
+.desktop-nav {
+  display: flex !important;
+}
+
+.mobile-menu-btn {
+  display: none !important;
+}
+
+.mobile-nav-menu {
+  display: none !important;
+}
+
+@media (max-width: 1023px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+  
+  .mobile-nav-menu {
+    display: block !important;
+  }
+}
+
+/* Custom animations for the toast and button components */
+@keyframes slide-in {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-out {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-25%); }
+}
+
+@keyframes ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+.animate-slide-out {
+  animation: slide-out 0.3s ease-in;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
